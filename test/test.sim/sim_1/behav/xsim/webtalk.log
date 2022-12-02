@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Webtalk v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:07 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Thu Dec  1 16:30:53 2022
+# Process ID: 6678
+# Current directory: /home/ivan/Desktop/github/VHDL-projects/test/test.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/ivan/Desktop/github/VHDL-projects/test/test.sim/sim_1/behav/xsim/xsim.dir/mul_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/ivan/Desktop/github/VHDL-projects/test/test.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/ivan/Desktop/github/VHDL-projects/test/test.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/ivan/Desktop/github/VHDL-projects/test/test.sim/sim_1/behav/xsim/xsim.dir/mul_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] '/home/ivan/Desktop/github/VHDL-projects/test/test.sim/sim_1/behav/xsim/xsim.dir/mul_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Dec  1 16:31:07 2022. For additional details about this file, please refer to the WebTalk help file at /home/ivan/Programs/Vivado/2021.1/doc/webtalk_introduction.html.
+webtalk_transmit: Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 410.406 ; gain = 0.000 ; free physical = 317 ; free virtual = 7003
+INFO: [Common 17-206] Exiting Webtalk at Thu Dec  1 16:31:07 2022...

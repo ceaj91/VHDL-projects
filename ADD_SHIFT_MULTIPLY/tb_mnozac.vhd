@@ -9,41 +9,56 @@ end tb_mnozac;
 
 architecture Behavioral of tb_mnozac is
 signal a_s, b_s :std_logic_vector(WIDTH-1 downto 0);
-signal start_s,clk_s,reset_s,ready_s:std_logic;
+signal clk_s,reset_s,ready_s:std_logic;
 signal r_s:std_logic_vector(2*WIDTH-1 downto 0);
 begin
 
-duv: entity work.add_and_shift_mnozac
+duv: entity work.pipeline
     generic map(WIDTH => WIDTH)
     port map(
             a_in => a_s,
             b_in  => b_s,
-            start => start_s,
             clk => clk_s,
             reset=>reset_s,
-            ready => ready_s,
             r_out => r_s);
-
-clk_gen: process is
-begin
-    clk_s <= '0';
+  process
+  begin
+    --a_i <= x"4";
+    --b_i <= x"4";
+    reset_s <= '1';
+    wait for 1000ns;
+    reset_s <= '0';
+    a_s <= std_logic_vector(to_unsigned(15, WIDTH));
+    b_s <= std_logic_vector(to_unsigned(15, WIDTH));
     wait for 100ns;
-    clk_s <= '1';
+    a_s <= std_logic_vector(to_unsigned(14, WIDTH));
+    b_s <= std_logic_vector(to_unsigned(14, WIDTH));
     wait for 100ns;
-end process;
+    a_s <= std_logic_vector(to_unsigned(13, WIDTH));
+    b_s <= std_logic_vector(to_unsigned(13, WIDTH));
+    wait for 100ns;
+    a_s <= std_logic_vector(to_unsigned(12, WIDTH));
+    b_s <= std_logic_vector(to_unsigned(12, WIDTH));
+    wait for 100ns;
+    a_s <= std_logic_vector(to_unsigned(11, WIDTH));
+    b_s <= std_logic_vector(to_unsigned(11, WIDTH));
+    wait for 100ns;
+    a_s <= std_logic_vector(to_unsigned(10, WIDTH));
+    b_s <= std_logic_vector(to_unsigned(10, WIDTH));
+    wait for 100ns;
+    a_s <= std_logic_vector(to_unsigned(9, WIDTH));
+    b_s <= std_logic_vector(to_unsigned(9, WIDTH));
+    wait for 100ns;
+    a_s <= std_logic_vector(to_unsigned(8, WIDTH));
+    b_s <= std_logic_vector(to_unsigned(8, WIDTH));
+    wait;
+  end process;
 
-signal_gen: process is
-begin
-a_s <= std_logic_vector(to_unsigned(30,WIDTH));
-b_s <= std_logic_vector(to_unsigned(6,WIDTH));
-start_s <= '0';
-reset_s <='1';
-wait for 300ns;
-reset_s <='0';
-wait for 700ns;
-start_s<='1';
-wait;
-end process;
+    process
+    begin
+      clk_s <= '1', '0' after 50ns;
+      wait for 100ns;
+    end process;
 
 
 end Behavioral;
